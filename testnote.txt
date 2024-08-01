@@ -1,0 +1,151 @@
+/////////////////  USERS (staff and customers) ROUTE  //////////////////////
+
+Register users via this route http://127.0.0.1:4444/api/auth/register
+Register Properties Includes:
+
+  {
+    "name": "Kunle Biola",
+    "email": "kunle123@gmail.com",
+    "usertype": "",
+    "password": "password123",
+    "password_confirmation": "password123"
+  }
+
+We have two types of users: staff and customers
+The "usertype" field only takes the key word "staff" when it is required to enrol a staff, else it should remain an empty string when enrolling customers
+"usertype": "staff" (when enrolling a new staff)
+"usertype": "" (when enrolling a new customer)
+
+
+Login via this route http://127.0.0.1:4444/api/auth/login
+Login Properties Includes:
+
+{
+    "email": "kunle123@gmail.com",
+    "password": "password123"
+}
+
+Please Note: A token will be generated after a successful login and this token will be required to access other pages depending on the user
+
+Logout via this route http://127.0.0.1:4444/api/auth/Logout
+
+GET ALL USERS: Access all users via this route http://127.0.0.1:4444/api/auth/users
+
+PLEASE NOTE: Only users whose "usertype" is "staff" can access the "GET ALL USERS ROUTE"
+
+GET A SINGLE USER: via this route http://127.0.0.1:4444/api/auth/users/id
+
+PLEASE NOTE: Only users whose "usertype" is "staff" can access the "GET A USER ROUTE"
+
+ACCESS YOUR PROFILE: via this route http://127.0.0.1:4444/api/auth/profile/id
+
+
+
+////////////////////// MENU ROUTE  /////////////////////////
+
+ACCESS CREATE MENU ROUTE: http://127.0.0.1:4444/api/auth/menu
+Menu Properties Includes:
+
+{
+    "name": "Food Menu",
+    "description": "This is menu"
+}
+
+ACCESS UPDATE MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/1
+Menu Properties Includes:
+
+{
+    "name": "Food Menu",
+    "description": "This is menu"
+}
+
+ACCESS DELETE MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/1
+
+ACCESS ALL MENU ROUTE: http://127.0.0.1:4444/api/menu
+
+ACCESS A SINGLE MENU ROUTE: http://127.0.0.1:4444/api/menu/1
+
+
+
+//////////////  FOOD MENU  ROUTE///////////////////////
+
+ACCESS CREATE FOOD MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/food
+Food Menu Properties Includes:
+
+{
+    "menu_id": 1,
+    "name": "Jellof rice",
+    "price": 5000,
+    "discount": 1500,
+    "description": "This is Jellof rice"
+}
+
+ACCESS UPDATE FOOD MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/food/1
+Food Menu Properties Includes:
+
+{
+    "menu_id": 1,
+    "name": "Jellof rice",
+    "price": 6500,
+    "discount": "",
+    "description": "This is Jellof rice"
+}
+
+ACCESS DELETE FOOD MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/food/1
+
+ACCESS ALL FOOD MENU ROUTE: http://127.0.0.1:4444/api/menu/food
+
+ACCESS A SINGLE FOOD MENU ROUTE: http://127.0.0.1:4444/api/menu/food/1
+
+
+
+//////////////  DRINK MENU  ROUTE///////////////////////
+
+ACCESS CREATE DRINK MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/drink
+Drink Menu Properties Includes:
+
+{
+    "menu_id": 1,
+    "name": "coca cola",
+    "price": 900,
+    "discount": 150,
+    "description": "This is coca cola"
+}
+
+ACCESS UPDATE DRINK MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/drink/1
+Drink Menu Properties Includes:
+
+{
+    "menu_id": 1,
+    "name": "coca cola",
+    "price": 800,
+    "discount": "",
+    "description": "This is coca cola"
+}
+
+ACCESS DELETE DRINK MENU ROUTE: http://127.0.0.1:4444/api/auth/menu/drink/1
+
+ACCESS ALL DRINK MENU ROUTE: http://127.0.0.1:4444/api/menu/drink
+
+ACCESS A SINGLE DRINK MENU ROUTE: http://127.0.0.1:4444/api/menu/drink/1
+
+
+
+///////////////////  ORDER ROUTE  ///////////////////////
+
+ACCESS THE CREATE ORDER ROUTE: (POST) http://127.0.0.1:4444/api/auth/order
+
+Order Properties Includes:
+
+{
+    "food_menu_id": 1,
+    "drink_menu_id": 3,
+    "name": "Mike Peter",
+    "phone": "08065924160",
+    "message": "An Order has been placed"
+}
+
+ACCESS THE ALL ORDER ROUTE: (GET) http://127.0.0.1:4444/api/auth/order
+
+
+
